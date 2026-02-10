@@ -1,0 +1,16 @@
+h1 {
+  font-family: Arial;
+  text-align: center;
+}
+
+p {
+  font-weight: normal;
+  text-align: center;
+}
+
+.imagen-centrada {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  height: auto;
+}
