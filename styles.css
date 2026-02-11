@@ -15,6 +15,8 @@ body {
 h1 {
   font-family: 'TS', Arial, sans-serif; 
   text-align: center;
+  color:white;
+  text-shadow:1px 1px 3px black;
 }
 
 p {
