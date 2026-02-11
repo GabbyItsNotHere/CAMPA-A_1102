@@ -1,5 +1,14 @@
+@font-face {
+  font-family: 'TS';
+  src: url(https://fontmeme.com/fuentes/fuente-agent-orange/#google_vignette) format('truetype');
+}
+
+body {
+  background-color: #87CEEB;
+}
+
 h1 {
-  font-family: Arial;
+    font-family: TS, Arial;
   text-align: center;
 }
 
