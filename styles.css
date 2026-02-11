@@ -1,8 +1,14 @@
 @font-face {
   font-family: 'TS';
   src: url('AGENTORANGE.TTF') format('truetype');
+  
 }
 
+@font-face {
+  font-family: 'GSB';
+  src: url('Gill Sans Bold.otf') format('truetype');
+  
+}
 body {
   background-image: url('YcO6a1l4vAxhkixY8FoyClE8zRdzobWKDUrbshfcymI.jpg'); 
   background-size: cover;      
@@ -14,6 +20,13 @@ body {
 
 h1 {
   font-family: 'TS', Arial, sans-serif; 
+  text-align: center;
+  color:white;
+  text-shadow:1px 1px 3px black;
+}
+
+h2 {
+  font-family: 'GSB', Arial, sans-serif; 
   text-align: center;
   color:white;
   text-shadow:1px 1px 3px black;
@@ -38,13 +51,13 @@ p {
   width: 100%;
   background-color: white;  
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
-  width: 90px !important;
-  height: 90px !important;
+  width: 50px !important;
+  height: 50px !important;
   object-fit: contain;
   margin: 0 15px;
   cursor: pointer;
