@@ -4,8 +4,12 @@
 }
 
 body {
-  background-color: #87CEEB;
-  padding-bottom: 100px;  
+  background-image: url('YcO6a1l4vAxhkixY8FoyClE8zRdzobWKDUrbshfcymI.jpg'); 
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  padding-bottom: 100px;
 }
 
 h1 {
@@ -37,8 +41,8 @@ p {
 }
 
 .logo {
-  width: 50px !important;
-  height: 50px !important;
+  width: 90px !important;
+  height: 90px !important;
   object-fit: contain;
   margin: 0 15px;
   cursor: pointer;
