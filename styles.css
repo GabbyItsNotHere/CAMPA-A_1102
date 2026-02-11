@@ -1,4 +1,4 @@
-@font-face {
+type@font-face {
   font-family: 'TS';
   src: url('AGENTORANGE.TTF') format('truetype');
   
@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'GSB';
-  src: url('Gill Sans Bold.otf') format('truetype');
+  src: url('Gill Sans Bold.otf') format('opentype');
   
 }
 body {
