@@ -37,8 +37,8 @@ p {
 }
 
 .logo {
-  width: 25px !important;
-  height: 25px !important;
+  width: 50px !important;
+  height: 50px !important;
   object-fit: contain;
   margin: 0 15px;
   cursor: pointer;
