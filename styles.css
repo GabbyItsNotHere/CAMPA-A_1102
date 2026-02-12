@@ -50,10 +50,12 @@ p {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: white;  
+  background-image: url('madera.jpg');  
+  background-size: cover;  
+  background-position: center;
   text-align: center;
   padding: 10px 0;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
 }
 
 .logo {
