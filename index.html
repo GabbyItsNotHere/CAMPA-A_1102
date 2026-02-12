@@ -26,21 +26,63 @@
       src="fbe0a851-c158-45dd-b5c9-024000acbb1e.png"
       alt="Logo de la campaña de la campaña"
     />
-    
     <div class="contenedor-botones">
-      <a class="boton" href="propuestas.html">
+      <a class="boton" onclick="toggleSeccion('propuestas')">
         <img src="PROPUESTAS.png" alt="Propuestas">
         <p>Propuestas</p>
       </a>
-      <a class="boton" href="sugerencias.html">
+      <a class="boton" onclick="toggleSeccion('sugerencias')">
         <img src="SUGERENCIAS.png" alt="Sugerencias">
         <p>Sugerencias</p>
       </a>
-      <a class="boton" href="intercursos.html">
+      <a class="boton" onclick="toggleSeccion('intercursos')">
         <img src="INTERCURSOS.png" alt="Intercursos">
         <p>Intercursos</p>
       </a>
     </div>
+    <div id="propuestas" class="seccion-oculta">
+      <div class="contenido-seccion">
+        <button class="boton-cerrar" onclick="cerrarSeccion('propuestas')">✕ Cerrar</button>
+        <h3>Propuestas</h3>
+        <iframe src="TU_ENLACE_DE_GOOGLE_FORMS_PROPUESTAS" width="100%" height="600" frameborder="0">Cargando...</iframe>
+      </div>
+    </div>
+    <div id="sugerencias" class="seccion-oculta">
+      <div class="contenido-seccion">
+        <button class="boton-cerrar" onclick="cerrarSeccion('sugerencias')">✕ Cerrar</button>
+        <h3>Sugerencias</h3>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyZYkL6AxUeXHP56l5iJWZFidiw-KDW91rQnNdWW_trpSImg/viewform?usp=publish-editor" width="100%" height="600" frameborder="0">Cargando...</iframe>
+      </div>
+    </div>
+    <div id="intercursos" class="seccion-oculta">
+      <div class="contenido-seccion">
+        <button class="boton-cerrar" onclick="cerrarSeccion('intercursos')">✕ Cerrar</button>
+        <h3>Inscripción a Intercursos</h3>
+        <iframe src="TU_ENLACE_DE_GOOGLE_FORMS_INTERCURSOS" width="100%" height="600" frameborder="0">Cargando...</iframe>
+      </div>
+    </div>
+    <script>
+      function toggleSeccion(id) {
+        const secciones = document.querySelectorAll('.seccion-oculta');
+        secciones.forEach(seccion => {
+          if (seccion.id !== id) {
+            seccion.classList.remove('activa');
+          }
+        });
+        const seccion = document.getElementById(id);
+        seccion.classList.toggle('activa');
+        if (seccion.classList.contains('activa')) {
+          setTimeout(() => {
+            seccion.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+      }
+
+      function cerrarSeccion(id) {
+        const seccion = document.getElementById(id);
+        seccion.classList.remove('activa');
+      }
+    </script>
     
     <div class="logos-footer">
       <a href="https://www.tiktok.com/@la.mejor.prom.2?_r=1&_t=ZS-93omy2aVXEO" target="_blank">
@@ -56,4 +98,5 @@
     </div>
   </body>
 </html>
+
 
