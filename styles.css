@@ -35,6 +35,7 @@ p {
   font-family: Arial, sans-serif;
   font-weight: bold;
   text-align: center;
+  color: white;
   text-shadow: 1px 1px 3px black;  
 }
 
@@ -74,32 +75,36 @@ p {
 .contenedor-botones {
   display: flex;  
   justify-content: center;  
-  gap: 20px; 
-  margin: 40px 0;
+  gap: 15px;
+  margin: 40px auto;
+  max-width: 600px;
 }
 
-.boton-imagen {
-  width: 200px;
+.boton {
+  width: 150px;
   text-align: center;
   background-color: #4CAF50;
-  padding: 15px;
+  padding: 10px;
   border-radius: 15px;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
+  display: block;
 }
 
-.boton-imagen img {
+.boton img {
   width: 100%;
   border-radius: 10px;
 }
 
-.boton-imagen p {
+.boton p {
   color: white;
   font-weight: bold;
   margin-top: 10px;
+  font-size: 14px;
 }
 
-.boton-imagen:hover {
+.boton:hover {
   transform: scale(1.05);
   background-color: #45a049;
 }
