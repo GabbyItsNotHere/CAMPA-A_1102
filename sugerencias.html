@@ -2,31 +2,168 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sugerencias - Personería 1102</title>
+  <title>Propuestas</title>
   <link rel="stylesheet" href="styles.css">
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        .contenedor {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .temporizador {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .tiempo-bloque {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 25px;
+            border-radius: 15px;
+            min-width: 120px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .numero {
+            font-size: 72px;
+            font-weight: bold;
+            line-height: 1;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+
+        .etiqueta {
+            font-size: 18px;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+
+        .revelacion {
+            display: none;
+            animation: aparecer 1s ease-in;
+        }
+
+        .revelacion h2 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .revelacion p {
+            font-size: 24px;
+            line-height: 1.6;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .temporizador {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .tiempo-bloque {
+                min-width: 80px;
+                padding: 15px;
+            }
+            
+            .numero {
+                font-size: 48px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="contenedor">
+        <div id="countdown">
+            <h1>🎉 Gran Revelación en:</h1>
+            <div class="temporizador">
+                <div class="tiempo-bloque">
+                    <div class="numero" id="dias">00</div>
+                    <div class="etiqueta">Días</div>
+                </div>
+                <div class="tiempo-bloque">
+                    <div class="numero" id="horas">00</div>
+                    <div class="etiqueta">Horas</div>
+                </div>
+                <div class="tiempo-bloque">
+                    <div class="numero" id="minutos">00</div>
+                    <div class="etiqueta">Minutos</div>
+                </div>
+                <div class="tiempo-bloque">
+                    <div class="numero" id="segundos">00</div>
+                    <div class="etiqueta">Segundos</div>
+                </div>
+            </div>
+        </div>
 
-  <h1>Buzón de Sugerencias</h1>
+        <div class="revelacion" id="revelacion">
+            <h1>REVELACION DE PROPUESTAS</h1>
+        </div>
+    </div>
 
-  <p>
-    Este espacio está diseñado para que los estudiantes puedan
-    expresar sus ideas, inquietudes y propuestas de mejora. 
-  </p>
+    <script>
 
-  <h2>¿Cómo participar?</h2>
+        const fechaObjetivo = new Date("March 1, 2026 6:00:00").getTime();
 
-  <ul>
-    <li>Escribe tu sugerencia con respeto.</li>
-    <li>Propón soluciones claras.</li>   
-  </ul>
+        const intervalo = setInterval(function() {
+            const ahora = new Date().getTime();
+            const distancia = fechaObjetivo - ahora;
 
-  <label for = "sugerencia"> Sugerencia </label> <br>
-  <textarea cols = '50' rows = '10' id = "sugerencia" 
-    placeholder = "ingrese su sugerencia" name = "sugerencia"> </textarea><br>
-  <input type = "submit" />
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-  <a href="index.html">⬅ Volver a la página principal</a>
+            document.getElementById("dias").textContent = String(dias).padStart(2, '0');
+            document.getElementById("horas").textContent = String(horas).padStart(2, '0');
+            document.getElementById("minutos").textContent = String(minutos).padStart(2, '0');
+            document.getElementById("segundos").textContent = String(segundos).padStart(2, '0');
 
+            if (distancia < 0) {
+                clearInterval(intervalo);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("revelacion").style.display = "block";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
